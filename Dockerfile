@@ -12,8 +12,9 @@ RUN pip install -r ./requirements.txt
 
 RUN rm -rf .git
 
-# RUN apt-get -y install fonts-nanum
-# RUN fc-cache -fv
-# RUN rm ~/.cache/matplotlib -rf
+RUN apt-get update
+RUN apt-get -y install fonts-nanum
+RUN fc-cache -fv
+RUN rm ~/.cache/matplotlib -rf
 
 
