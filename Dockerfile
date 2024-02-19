@@ -8,5 +8,7 @@ RUN git clone https://github.com/gocolab/co_data_analysis
 
 WORKDIR /app/co_data_analysis
 
+RUN pip install -r ./requirements.txt
+
 RUN rm -rf .git
 
