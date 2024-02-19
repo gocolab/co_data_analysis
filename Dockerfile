@@ -4,11 +4,12 @@ FROM python:3.11
 WORKDIR /app
 
 # Git repository clone
-RUN git clone https://github.com/gocolab/co_data_analysis
+RUN git clone -b main https://github.com/gocolab/co_data_analysis co_data_analysis
 
 WORKDIR /app/co_data_analysis
 
+RUN pip install -r ./requirements.txt
+
 RUN rm -rf .git
 
-RUN pip install -r ./requirements.txt
 
