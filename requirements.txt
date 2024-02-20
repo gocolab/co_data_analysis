@@ -9,3 +9,4 @@ wget
 konlpy
 python-mecab-ko 
 pyLDAvis
+pyarrow
