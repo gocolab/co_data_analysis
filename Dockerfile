@@ -1,24 +1,28 @@
-FROM python:3.11
+# Specifies the base image from which you are building. Replace '_' with the name and tag of the base image you want to use (e.g., ubuntu:20.04).
+FROM _?
 
-# OpenJDK 설치 (예시로 OpenJDK 17을 설치)
+# Updates the package lists for the package manager, installs the necessary packages, cleans up the cache to reduce the image size,
+# and removes unnecessary files. Replace '_' with the name of the package(s) you want to install (e.g., git).
 RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk fonts-nanum && \
+    apt-get install -y _? && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# JAVA_HOME 환경 변수 설정
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+# Set an environment variable. In this example, we're replacing the placeholder for setting a custom environment variable with a user-defined one.
+# Replace '_Path' and '/_?' with the name of the environment variable and its value respectively. For example, 'REPO_PATH /app/co_main'.
+ENV _Path /_?
 
-# 작업 디렉토리 설정
+# Sets the working directory inside the container to /app. If the directory does not exist, it will be created.
 WORKDIR /app
 
-# Git repository clone
-RUN git clone -b main https://github.com/gocolab/co_data_analysis co_data_analysis
+# Declare a build-time variable for the Git repository name. This allows us to use a variable for the repository name throughout the Dockerfile.
+ARG REPO_NAME=co_main
 
-WORKDIR /app/co_data_analysis
+# Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
+RUN git clone -b main https://github.com/gocolab/${REPO_NAME} ${REPO_NAME}
 
-# RUN pip install --no-cache-dir -r ./requirements.txt
-RUN pip install -r ./requirements.txt
+# Changes the working directory to /app/${REPO_NAME}. This uses the variable to dynamically set the directory path.
+WORKDIR /app/${REPO_NAME}
 
+# Removes the .git directory to reduce the container size.
 RUN rm -rf .git
-
