@@ -7,3 +7,5 @@
 ~$ docker-compose down
 ~$ docker-compose up -d  # reRun
 ```
+#### samples
+- connect mongodb : [samples\sample_mongodb_connection.ipynb](./samples/sample_mongodb_connection.ipynb)

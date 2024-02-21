@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   app:
-    container_name: jupyterlab
+    container_name: ${CONTAINER_PREFIX}_jupyterlab
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,8 +16,15 @@ services:
       - "--allow-root"
       - "--NotebookApp.token=''"
       - "--NotebookApp.notebook_dir='/app'"      
-    networks:
-      - webnet
-
-networks:
-  webnet:
+    # networks:
+    #   - webnet
+  mongodb:
+    image: mongo:7
+    container_name: ${CONTAINER_PREFIX}_mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    # networks:
+    #   - webnet   
+# networks:
+#   webnet: {}

@@ -12,10 +12,14 @@ ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 # 작업 디렉토리 설정
 WORKDIR /app
 
-# Git repository clone
-RUN git clone -b main https://github.com/gocolab/co_data_analysis co_data_analysis
+ARG BRANCH_NAME=data_analysis
+ARG DIR_NAME=template_${BRANCH_NAME}
 
-WORKDIR /app/co_data_analysis
+# Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
+RUN git clone -b ${BRANCH_NAME} https://github.com/gocolab/co_templates ${DIR_NAME}
+
+# Changes the working directory to /app/${REPO_NAME}. This uses the variable to dynamically set the directory path.
+WORKDIR /app/${DIR_NAME}
 
 # RUN pip install --no-cache-dir -r ./requirements.txt
 RUN pip install -r ./requirements.txt
