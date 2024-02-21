@@ -1,4 +1,5 @@
 jupyterlab 
+pyarrow
 pandas 
 numpy 
 matplotlib
@@ -9,4 +10,3 @@ wget
 konlpy
 python-mecab-ko 
 pyLDAvis
-pyarrow
