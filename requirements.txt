@@ -8,6 +8,6 @@ scipy
 scikit-learn
 wget
 konlpy
+pymongo
 python-mecab-ko 
 pyLDAvis
-pymongo

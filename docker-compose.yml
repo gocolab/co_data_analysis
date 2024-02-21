@@ -24,7 +24,7 @@ services:
     restart: always
     ports:
       - 27017:27017
-    # networks:
-    #   - webnet   
+#     networks:
+#       - webnet   
 # networks:
 #   webnet: {}
