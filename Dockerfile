@@ -2,12 +2,17 @@ FROM python:3.11
 
 # OpenJDK 설치 (예시로 OpenJDK 17을 설치)
 RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk fonts-nanum && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y openjdk-17-jdk fonts-nanum wget unzip
 
 # JAVA_HOME 환경 변수 설정
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+
+# Install Chrome and related dependencies
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && apt-get install -y google-chrome-stable && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # 작업 디렉토리 설정
 WORKDIR /app
@@ -23,7 +28,7 @@ RUN git clone -b ${BRANCH_NAME} https://github.com/${GITHUB_URI} ${DIR_NAME}
 WORKDIR /app/${DIR_NAME}
 
 # RUN pip install --no-cache-dir -r ./requirements.txt
-RUN pip install -r ./requirements.txt
+RUN pip install --no-cache-dir -r ./requirements.txt
 
 RUN rm -rf .git
 

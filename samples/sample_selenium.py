@@ -2,11 +2,18 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Ensure GUI is off
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 webdriver_manager_directory = ChromeDriverManager().install()
 
 # ChromeDriver 실행
-browser = webdriver.Chrome(service=ChromeService(webdriver_manager_directory))
+browser = webdriver.Chrome(service=ChromeService(webdriver_manager_directory)
+                           , options=chrome_options)
 
 # Chrome WebDriver의 capabilities 속성 사용
 capabilities = browser.capabilities
