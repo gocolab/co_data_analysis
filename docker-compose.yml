@@ -2,7 +2,7 @@ version: '3.9'
 services:
   jupyter:
     container_name: ${CONTAINER_PREFIX}_jupyterlab
-    image: template_data_analysis  # Specifies the name for the built image.
+    image: template_data_engineers  # Specifies the name for the built image.
     build:
       context: .
       dockerfile: Dockerfile
