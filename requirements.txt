@@ -1,10 +1,8 @@
+# data analysis
 jupyterlab
-
 pyarrow
 pandas
-
 numpy
-
 matplotlib
 seaborn
 scipy
@@ -14,10 +12,20 @@ konlpy
 pymongo
 python-mecab-ko
 pyLDAvis
+# fastapi
 fastapi
+pydantic
 uvicorn
 jinja2
 python-multipart
 python-jose[cryptography]
 passlib[bcrypt]
 pydantic-settings
+# web scrapping
+requests
+beautifulsoup4
+lxml
+pandas
+selenium
+urllib3
+scrapy
