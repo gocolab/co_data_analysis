@@ -1,13 +1,19 @@
 version: '3.9'
 services:
-  app:
+  jupyter:
     container_name: ${CONTAINER_PREFIX}_jupyterlab
     image: template_data_analysis  # Specifies the name for the built image.
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
     ports:
       - 8888:8888
+    depends_on:
+      - mongodb
+    networks:
+      - app-network      
     command:
       - "jupyter"
       - "lab"
@@ -23,3 +29,8 @@ services:
     restart: always
     ports:
       - 27017:27017
+    networks:
+      - app-network      
+networks:
+  app-network:
+    driver: bridge      
