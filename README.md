@@ -1,7 +1,7 @@
-# co_data_engineers
+# co_web_scrapings
 #### CLI with Dockerfile and compose.xml : duration 150.4s
 ```
-~$ docker-compose --project-name data_engineers up -d --build 
+~$ docker-compose --project-name web_scrapings up -d --build 
 
 ~$ docker-compose build
 ~$ docker-compose up -d

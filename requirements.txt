@@ -6,21 +6,9 @@ numpy
 matplotlib
 seaborn
 scipy
-scikit-learn
 wget
-konlpy
 pymongo
-python-mecab-ko
-pyLDAvis
-# fastapi
-fastapi
-pydantic
-uvicorn
-jinja2
-python-multipart
-python-jose[cryptography]
-passlib[bcrypt]
-pydantic-settings
+
 # web scrapping
 requests
 beautifulsoup4

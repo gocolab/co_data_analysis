@@ -1,11 +1,7 @@
 FROM python:3.11
 
-# OpenJDK 설치 (예시로 OpenJDK 17을 설치)
 RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk fonts-nanum wget unzip
-
-# JAVA_HOME 환경 변수 설정
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+    apt-get install -y fonts-nanum wget unzip
 
 # Install Chrome and related dependencies
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
