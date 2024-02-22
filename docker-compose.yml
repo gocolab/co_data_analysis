@@ -10,6 +10,7 @@ services:
       - JUPYTER_ENABLE_LAB=yes
     ports:
       - 8888:8888
+      - 8000:8000
     depends_on:
       - mongodb
     networks:
@@ -30,7 +31,7 @@ services:
     ports:
       - 27017:27017
     networks:
-      - app-network      
+      - app-network  
 networks:
   app-network:
     driver: bridge      
