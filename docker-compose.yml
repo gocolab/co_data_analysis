@@ -1,8 +1,8 @@
 version: '3.9'
 services:
   jupyter:
-    container_name: ${CONTAINER_NAME}_jupyter
-    image: template_${CONTAINER_NAME}  # Specifies the name for the built image.
+    container_name: ${CONTAINER_NAME_PREFIX}_jupyter
+    image: ${IMAGE_NAME}
     build:
       context: .
       args:
@@ -29,7 +29,7 @@ services:
       - "--NotebookApp.notebook_dir='/app'"      
   mongodb:
     image: mongo:7
-    container_name: ${CONTAINER_NAME}_mongodb
+    container_name: ${CONTAINER_NAME_PREFIX}_mongodb
     restart: always
     ports:
       - 27017:27017
