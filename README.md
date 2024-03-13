@@ -2,7 +2,7 @@
 #### Main package
 - python:3.11
 - mongo:7
-- 
+
 #### CLI with Dockerfile and compose.xml : duration 150.4s
 ```
 # --project-name is docker container name
