@@ -9,8 +9,3 @@ services:
       - _?:_?
     command:
       - _?     
-    networks:
-      - webnet
-
-networks:
-  webnet:
