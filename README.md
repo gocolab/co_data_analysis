@@ -3,6 +3,7 @@
 #### Main package
 - python:3.11
 - mongo:7
+- selenium
 
 #### CLI with Dockerfile and compose.xml : duration 150.4s
 ```
