@@ -10,8 +10,8 @@
 ~$ docker-compose --project-name web_scrapings up -d --build
 ```
 #### connect remote Docker container
-@ http://localhost:8888/
-@ mongodb://localhost:27017/ or mongodb://mongodb:27017/
+- @ http://localhost:8888/
+- @ mongodb://localhost:27017/ or mongodb://mongodb:27017/
 
 #### samples
 - [samples\sample_mongodb_connection.ipynb](./samples/sample_mongodb_connection.ipynb)
