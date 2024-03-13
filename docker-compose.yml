@@ -8,7 +8,7 @@ services:
       args:
         GIT_BRANCH_NAME: ${GIT_BRANCH_NAME}
         APP_DIR_NAME: ${APP_DIR_NAME}      
-        GITHUB_URI: ${GITHUB_URI}      
+        GIT_URI: ${GIT_URI}      
       dockerfile: Dockerfile
     environment:
       - JUPYTER_ENABLE_LAB=yes
