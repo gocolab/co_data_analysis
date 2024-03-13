@@ -9,4 +9,4 @@
 @ mongodb://localhost:27017/ or mongodb://mongodb:27017/
 
 #### samples
-- connect mongodb : [samples\sample_mongodb_connection.ipynb](./samples/sample_mongodb_connection.ipynb)
+- [samples\sample_mongodb_connection.ipynb](./samples/sample_mongodb_connection.ipynb)
