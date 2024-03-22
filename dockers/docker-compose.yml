@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  jupyter:
+    container_name: ${CONTAINER_NAME_PREFIX}_jupyter
+    image: ${IMAGE_NAME}
+    build:
+      context: .
+      args:
+        GIT_BRANCH_NAME: ${GIT_BRANCH_NAME}
+        APP_DIR_NAME: ${APP_DIR_NAME}      
+        GITHUB_URI: ${GITHUB_URI}      
+      dockerfile: Dockerfile
+    networks:
+      - app-network      
+    command: sleep infinity
+networks:
+  app-network:
+    driver: bridge      
