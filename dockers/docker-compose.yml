@@ -13,6 +13,17 @@ services:
     networks:
       - app-network      
     command: sleep infinity
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cocolabhub
+      MYSQL_DATABASE: ${IMAGE_NAME}
+      MYSQL_USER: cocolabhub
+      MYSQL_PASSWORD: cocolabhub
+    ports:
+      - "3306:3306"    
 networks:
   app-network:
     driver: bridge      
+
