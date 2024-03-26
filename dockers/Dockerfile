@@ -25,5 +25,5 @@ WORKDIR /app/${APP_DIR_NAME}
 RUN rm -rf .git
 
 # Download MySQL JDBC driver and add it to the classpath
-RUN wget -O /app/mysql-connector-java-8.0.26.jar https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.26.tar.gz
+RUN wget -O /app/libs/mysql-connector-java-8.0.26.jar https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.26.tar.gz
 
