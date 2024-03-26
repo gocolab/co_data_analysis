@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class JavaWithMysql {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/DB_NAME";
+    static final String DB_URL = "jdbc:mysql://localhost/java_mysql";
     static final String USER = "cocolabhub";
     static final String PASS = "cocolabhub";
 
