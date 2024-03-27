@@ -1,11 +1,9 @@
 import java.sql.*;
 import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 
 public class JavaWithMysql {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/java_mysql";
+    static final String DB_URL = "jdbc:mysql://mysql/java_mysql";   // container name
     static final String USER = "cocolabhub";
     static final String PASS = "cocolabhub";
 
