@@ -1,3 +1,5 @@
+package samples;
+
 import java.sql.*;
 import java.util.HashMap;
 
