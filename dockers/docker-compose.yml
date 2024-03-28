@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   java:
-    container_name: ${CONTAINER_NAME_PREFIX}_java
+    # container_name: ${CONTAINER_NAME_PREFIX}_java
     image: ${IMAGE_NAME}
     build:
       context: .
