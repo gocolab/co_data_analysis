@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.HashMap;
 
 public class JavaWithMysql {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://java_mysql_mysql/java_mysql";   // container name
     static final String USER = "cocolabhub";
     static final String PASS = "cocolabhub";
@@ -15,34 +14,33 @@ public class JavaWithMysql {
         HashMap<Integer, HashMap<String, Object>> data = new HashMap<>();
         
         try {
-            // Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
 
             // Create
-            String sql = "INSERT INTO TableName (column1, column2) VALUES ('value1', 'value2')";
+            String sql = "INSERT INTO TableName (pk_id, column1, column2) VALUES (1, 'value1', 'value2')";
             stmt.executeUpdate(sql);
 
             // Read
             sql = "SELECT * FROM TableName";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                int id = rs.getInt("id");
+                int pk_id = rs.getInt("pk_id");
                 String column1 = rs.getString("column1");
                 String column2 = rs.getString("column2");
                 
                 HashMap<String, Object> row = new HashMap<>();
                 row.put("column1", column1);
                 row.put("column2", column2);
-                data.put(id, row);
+                row.put("pk_id", row);
             }
 
             // Update
-            sql = "UPDATE TableName SET column1='newvalue1' WHERE id=1";
+            sql = "UPDATE TableName SET column1='newvalue1' WHERE pk_id=1";
             stmt.executeUpdate(sql);
 
             // Delete
-            sql = "DELETE FROM TableName WHERE id=2";
+            sql = "DELETE FROM TableName WHERE pk_id=2";
             stmt.executeUpdate(sql);
 
             rs.close();
