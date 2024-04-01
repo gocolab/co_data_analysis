@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class JavaWithMysql {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://mysql/java_mysql";   // container name
+    static final String DB_URL = "jdbc:mysql://java_mysql_mysql/java_mysql";   // container name
     static final String USER = "cocolabhub";
     static final String PASS = "cocolabhub";
 
@@ -15,7 +15,7 @@ public class JavaWithMysql {
         HashMap<Integer, HashMap<String, Object>> data = new HashMap<>();
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            // Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
 
