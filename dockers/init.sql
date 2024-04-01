@@ -1,8 +1,8 @@
 -- Create a new database
-CREATE DATABASE IF NOT EXISTS template_python_mysql;
+CREATE DATABASE IF NOT EXISTS python_mysql;
 
 -- Use the created database
-USE template_python_mysql;
+USE python_mysql;
 
 -- Create a new table
 CREATE TABLE IF NOT EXISTS TableName (
