@@ -9,4 +9,9 @@
 ~$ docker-compose --project-name python_mysql up -d --build
 ```
 #### samples
-- [src/Sameple.java](./src/Sameple.java)
+- [samples/python_mysql.py](./samples/python_mysql.py)
+
+#### database infors
++ user='cocolabhub',
++ password='cocolabhub',
++ db='python_mysql'
