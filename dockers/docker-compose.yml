@@ -1,7 +1,7 @@
 version: '3.9'
 services:
-  java:
-    # container_name: ${CONTAINER_NAME_PREFIX}_java
+  python:
+    # container_name: ${CONTAINER_NAME_PREFIX}_python
     image: ${IMAGE_NAME}
     build:
       context: .

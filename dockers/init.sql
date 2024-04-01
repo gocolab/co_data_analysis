@@ -1,8 +1,8 @@
 -- Create a new database
-CREATE DATABASE IF NOT EXISTS template_java_mysql;
+CREATE DATABASE IF NOT EXISTS template_python_mysql;
 
 -- Use the created database
-USE template_java_mysql;
+USE template_python_mysql;
 
 -- Create a new table
 CREATE TABLE IF NOT EXISTS TableName (
