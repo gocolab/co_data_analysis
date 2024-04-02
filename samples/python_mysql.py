@@ -24,12 +24,12 @@ try:
             print(row)  # 각 행 출력
 
         # Update
-        sql = "UPDATE TableName SET column1=%s WHERE id=%s"
+        sql = "UPDATE TableName SET column1=%s WHERE pk_id=%s"
         cursor.execute(sql, ('newvalue1', 1))
         conn.commit()
 
         # Delete
-        sql = "DELETE FROM TableName WHERE id=%s"
+        sql = "DELETE FROM TableName WHERE pk_id=%s"
         cursor.execute(sql, (1,))
         conn.commit()
 
