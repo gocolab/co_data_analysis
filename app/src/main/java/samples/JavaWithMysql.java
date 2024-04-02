@@ -40,7 +40,7 @@ public class JavaWithMysql {
             stmt.executeUpdate(sql);
 
             // Delete
-            sql = "DELETE FROM TableName WHERE pk_id=2";
+            sql = "DELETE FROM TableName WHERE pk_id=1";
             stmt.executeUpdate(sql);
 
             rs.close();
