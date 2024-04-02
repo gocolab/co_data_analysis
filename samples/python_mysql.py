@@ -12,8 +12,8 @@ conn = pymysql.connect(
 try:
     with conn.cursor() as cursor:
         # Create
-        sql = "INSERT INTO TableName (column1, column2) VALUES (%s, %s)"
-        cursor.execute(sql, ('value1', 'value2'))
+        sql = "INSERT INTO TableName (pk_id,column1, column2) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (1, 'value1', 'value2'))
         conn.commit()
 
         # Read
@@ -30,7 +30,7 @@ try:
 
         # Delete
         sql = "DELETE FROM TableName WHERE id=%s"
-        cursor.execute(sql, (2,))
+        cursor.execute(sql, (1,))
         conn.commit()
 
 finally:
