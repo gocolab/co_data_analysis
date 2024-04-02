@@ -32,7 +32,8 @@ public class JavaWithMysql {
                 HashMap<String, Object> row = new HashMap<>();
                 row.put("column1", column1);
                 row.put("column2", column2);
-                row.put("pk_id", row);
+                row.put("pk_id", pk_id);
+                System.out.println(row)
             }
 
             // Update
