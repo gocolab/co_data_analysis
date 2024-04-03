@@ -1,4 +1,10 @@
-FROM openjdk:11-jdk
+FROM ubuntu:24.04
+
+# OpenJDK 설치 (예시로 OpenJDK 17을 설치)
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # 작업 디렉토리 설정
 WORKDIR /app
