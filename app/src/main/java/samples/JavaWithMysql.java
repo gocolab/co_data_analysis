@@ -33,7 +33,7 @@ public class JavaWithMysql {
                 row.put("column1", column1);
                 row.put("column2", column2);
                 row.put("pk_id", pk_id);
-                System.out.println(row)
+                System.out.println(row);
             }
 
             // Update
