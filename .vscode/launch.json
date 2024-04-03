@@ -2,11 +2,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot-DemoApplication<demo>",
+            "name": "Spring Boot-CoTemplatesApplication<co_templates>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.demo.DemoApplication",
-            "projectName": "demo",
+            "mainClass": "com.example.co_templates.CoTemplatesApplication",
+            "projectName": "co_templates",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
