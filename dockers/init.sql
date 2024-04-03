@@ -1,8 +1,8 @@
 -- Create a new database
-CREATE DATABASE IF NOT EXISTS java_mysql;
+CREATE DATABASE IF NOT EXISTS spring_mysql;
 
 -- Use the created database
-USE java_mysql;
+USE spring_mysql;
 
 -- Create a new table
 CREATE TABLE IF NOT EXISTS TableName (
