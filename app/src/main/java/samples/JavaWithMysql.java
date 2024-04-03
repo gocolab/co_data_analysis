@@ -18,7 +18,9 @@ public class JavaWithMysql {
             stmt = conn.createStatement();
 
             // Create
-            String sql = "INSERT INTO TableName (pk_id, column1, column2) VALUES (1, 'value1', 'value2')";
+            int first = 1;
+            String second = "value1";
+            String sql = "INSERT INTO TableName (pk_id, column1, column2) VALUES ("+first+", '"+second+"', 'value2')";
             stmt.executeUpdate(sql);
 
             // Read
