@@ -1,4 +1,4 @@
-## spring_mysql
+## springboot_mysql
 #### Main package
 - java:17
 - spring boot:3.1.11-SNAPSHOT
