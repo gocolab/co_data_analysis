@@ -1,7 +1,6 @@
 version: '3.9'
 services:
   jupyter:
-    # container_name: ${CONTAINER_NAME_PREFIX}_jupyter
     image: ${IMAGE_NAME}
     build:
       context: .
@@ -16,8 +15,6 @@ services:
       - 8888:8888
     depends_on:
       - mongodb
-    networks:
-      - app-network      
     command:
       - "jupyter"
       - "lab"
@@ -27,14 +24,8 @@ services:
       - "--allow-root"
       - "--NotebookApp.token=''"
       - "--NotebookApp.notebook_dir='/app'"      
-  mongodb:
+  db_mongodb_7:
     image: mongo:7
-    # container_name: ${CONTAINER_NAME_PREFIX}_mongodb
     restart: always
     ports:
       - 27017:27017
-    networks:
-      - app-network  
-networks:
-  app-network:
-    driver: bridge      
