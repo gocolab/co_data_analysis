@@ -16,7 +16,7 @@ app.add_middleware(
 from fastapi.staticfiles import StaticFiles
 # url 경로, 자원 물리 경로, 프로그램밍 측면
 import os
-static_images_directory = os.path.join("resources", "images")
+static_images_directory = os.path.join('apps',"resources", "images")
 app.mount("/images", StaticFiles(directory=static_images_directory), name="static_images")
 
 @app.get("/")
