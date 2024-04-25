@@ -1,7 +1,6 @@
 version: '3.9'
 services:
-  jupyter_fastapi:
-    image: template_${CONTAINER_NAME_PREFIX}  # Specifies the name for the built image.
+  fastapi:
     build:
       context: .
       args:
@@ -9,25 +8,13 @@ services:
         APP_DIR_NAME: ${APP_DIR_NAME}      
         GIT_URI: ${GIT_URI}      
       dockerfile: Dockerfile
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
     ports:
-      - 8888:8888
       - 8000:8000
     depends_on:
       - mongodb
     command:
-      - "jupyter"
-      - "lab"
-      - "--ip=0.0.0.0"
-      - "--port=8888"
-      - "--no-browser"
-      - "--allow-root"
-      - "--NotebookApp.token=''"
-      - "--NotebookApp.notebook_dir='/apps'"      
   db_mongodb_7:
     image: mongo:7
-    # container_name: ${CONTAINER_NAME_PREFIX}_mongodb
     restart: always
     ports:
       - 27017:27017
