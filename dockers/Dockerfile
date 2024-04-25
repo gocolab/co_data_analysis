@@ -15,7 +15,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     rm -rf /var/lib/apt/lists/*
 
 # 작업 디렉토리 설정
-WORKDIR /app
+WORKDIR /apps
 
 ARG GIT_BRANCH_NAME
 ARG APP_DIR_NAME
@@ -25,10 +25,12 @@ ARG GIT_URI
 RUN git clone -b ${GIT_BRANCH_NAME} ${GIT_URI} ${APP_DIR_NAME}
 
 # Changes the working directory to /app/${REPO_NAME}. This uses the variable to dynamically set the directory path.
-WORKDIR /app/${APP_DIR_NAME}
+WORKDIR /apps/${APP_DIR_NAME}/app
 
 # RUN pip install --no-cache-dir -r ./requirements.txt
 RUN pip install --no-cache-dir -r ./requirements.txt
+
+WORKDIR /apps/${APP_DIR_NAME}
 
 RUN rm -rf .git
 
