@@ -6,8 +6,9 @@ USE python_mysql;
 
 -- Create a new table
 CREATE TABLE IF NOT EXISTS TableName (
-    column1 VARCHAR(255),
-    column2 VARCHAR(255)
+    pk_id INT
+    , column1 VARCHAR(255)
+    , column2 VARCHAR(255)
 );
 
 -- Insert values into the table
