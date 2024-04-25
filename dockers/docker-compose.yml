@@ -11,8 +11,8 @@ services:
     ports:
       - 8000:8000
     depends_on:
-      - mongodb
-    command:
+      - db_mongodb_7
+    command: sleep infinity
   db_mongodb_7:
     image: mongo:7
     restart: always
