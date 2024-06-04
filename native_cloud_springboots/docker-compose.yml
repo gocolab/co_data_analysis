@@ -1,0 +1,23 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "2375:2375"
+      - "8443:8443"
+      - "8080:8080"
+    tty: true
+
+  polar-postgres:
+    image: postgres:14.10
+    container_name: polar-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: polardb_catalog
+    ports:
+      - "5432:5432"
