@@ -4,15 +4,17 @@ FROM ubuntu:20.04
 # 비대화형 모드 설정
 # ENV DEBIAN_FRONTEND=noninteractive
 
-# 필요한 패키지 설치 및 Java 18 설치
-RUN apt-get update && \
-    apt-get install -y openjdk-18-jdk && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# 필요한 패키지 업데이트 및 설치
+RUN apt-get update && apt-get install -y wget
 
-# ENV JAVA_HOME=/usr/lib/jvm/java-18-openjdk-arm64
-ENV JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
-ENV PATH=$JAVA_HOME/bin:$PATH
+# OpenJDK 18 다운로드 및 설치
+RUN wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb && \
+    apt-get install -y ./jdk-18_linux-x64_bin.deb && \
+    rm ./jdk-18_linux-x64_bin.deb
+
+# JAVA_HOME 환경 변수 설정 및 PATH에 추가
+ENV JAVA_HOME=/usr/lib/jvm/jdk-18
+ENV PATH="$JAVA_HOME/bin:$PATH"
 
 WORKDIR /apps
 
