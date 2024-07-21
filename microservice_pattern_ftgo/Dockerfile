@@ -18,8 +18,9 @@ ENV PATH="$JAVA_HOME/bin:$PATH"
 
 WORKDIR /apps
 
-RUN git clone -b main https://github.com/microservices-patterns/ftgo-application
-    
+RUN git clone -b master https://github.com/microservices-patterns/ftgo-application ftgo-application
+
+WORKDIR /apps/ftgo-application
 # sed 명령어로 Dockerfile의 FROM 명령어를 수정합니다
 RUN sed -i 's/FROM python:2.7.16-alpine3.9/FROM python:3-alpine3.11/' ./dynamodblocal-init/Dockerfile
 
