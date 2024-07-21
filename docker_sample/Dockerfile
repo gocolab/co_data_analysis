@@ -13,7 +13,7 @@ RUN apt-get update && \
 ENV _Path /_?
 
 # Sets the working directory inside the container to /app. If the directory does not exist, it will be created.
-WORKDIR /app
+WORKDIR /apps
 
 # Declare a build-time variable for the Git repository name. This allows us to use a variable for the repository name throughout the Dockerfile.
 ARG REPO_NAME=co_main
