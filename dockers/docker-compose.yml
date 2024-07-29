@@ -10,7 +10,7 @@ services:
     command: sleep infinity
     ports:
       - "8080:8080"  
-  db_mysql_8:
+  db_mysql_8_202401052125:
     image: mysql:8
     restart: always
     environment:
