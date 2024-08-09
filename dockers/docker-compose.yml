@@ -11,7 +11,6 @@ services:
       dockerfile: Dockerfile
     command: sleep infinity
   mysql_8:
-    container_name: ${CONTAINER_NAME_PREFIX}_mysql
     image: mysql:8
     restart: always
     environment:
