@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mariadb_11.4.2:
+    image: mariadb:11.4.2
+    # container_name: mariadb_container
+    environment:
+      MYSQL_ROOT_PASSWORD: cocolabhub
+      MYSQL_DATABASE: cocolabhub
+      MYSQL_USER: cocolabhub
+      MYSQL_PASSWORD: cocolabhub
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d
