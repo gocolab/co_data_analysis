@@ -1,9 +1,9 @@
 -- init.sql
 -- Create a new database
-CREATE DATABASE IF NOT EXISTS java_mysql;
+CREATE DATABASE IF NOT EXISTS cocolabhub;
 
 -- Use the created database
-USE java_mysql;
+USE cocolabhub;
 
 -- Create a new table
 CREATE TABLE IF NOT EXISTS TableName (

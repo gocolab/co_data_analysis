@@ -9,6 +9,6 @@ services:
       POSTGRES_USER: cocolabhub
       POSTGRES_PASSWORD: cocolabhub
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
