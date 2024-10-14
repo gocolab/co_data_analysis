@@ -1,19 +1,14 @@
-## co_web_scrapings
+### note : selenium 동작은 Chrome Drive 사용해 Docker Container 사용 시 별도 설정 필요
 
 #### Main package
 - python:3.11
 - mongo:7
 - selenium
+- Chrome Browser
 
-#### CLI with Dockerfile and compose.xml : duration 150.4s
-```
-# --project-name is docker container name
-~$ docker-compose --project-name web_scrapings up -d --build
-```
 #### connect remote Docker container
-- @ http://localhost:8888/
 - @ mongodb://localhost:27017/ or mongodb://mongodb:27017/
 
 #### samples
-- [samples\sample_mongodb_connection.ipynb](./samples/sample_mongodb_connection.ipynb)
+- [samples\sample_mongodb_connection.py](./samples/sample_mongodb_connection.py)
 - [samples\sample_selenium.py](./samples/sample_selenium.py)
