@@ -6,7 +6,8 @@ conn = pymysql.connect(
     user='cocolabhub',
     password='cocolabhub',
     db='python_mysql',  # 데이터베이스 이름
-    charset='utf8mb4'
+    charset='utf8mb4', 
+    cursorclass=pymysql.cursors.DictCursor  # DictCursor로 설정    
 )
 
 try:
@@ -22,6 +23,7 @@ try:
         data = cursor.fetchall()
         for row in data:
             print(row)  # 각 행 출력
+            print(f"pk_id: {row['pk_id']}, column1: {row['column1']}, column2: {row['column2']}")
 
         # Update
         sql = "UPDATE TableName SET column1=%s WHERE pk_id=%s"
