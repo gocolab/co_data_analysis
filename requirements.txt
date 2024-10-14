@@ -11,3 +11,7 @@ konlpy
 pymongo
 python-mecab-ko 
 pyLDAvis
+finance-datareader
+plotly
+openpyxl
+pykrx
