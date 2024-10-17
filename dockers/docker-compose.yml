@@ -8,18 +8,9 @@ services:
         APP_DIR_NAME: ${APP_DIR_NAME}      
         GIT_URI: ${GIT_URI}      
       dockerfile: Dockerfile
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
     ports:
-      - 8888:8888
-    command:
-      - "jupyter"
-      - "lab"
-      - "--port=8888"
-      - "--no-browser"
-      - "--allow-root"
-      - "--NotebookApp.token=''"
-      - "--NotebookApp.notebook_dir='/app'"      
+      - 5500:5500
+    command: sleep infinity
   db_mongodb_7:
     image: mongo:7
     restart: always
