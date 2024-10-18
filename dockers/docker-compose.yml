@@ -1,5 +1,5 @@
 services:
-  jupyter:
+  gatheringdatas:
     image: ${IMAGE_NAME}
     build:
       context: .
