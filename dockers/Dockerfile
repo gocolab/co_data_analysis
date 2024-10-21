@@ -4,7 +4,7 @@ FROM python:3.11-slim-bullseye
 # Update package manager and install necessary dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    fonts-nanum wget unzip curl gnupg && \
+    fonts-nanum wget unzip curl git gnupg && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Chrome and dependencies
