@@ -2,7 +2,7 @@ FROM python:3.11
 
 # OpenJDK 설치 (예시로 OpenJDK 17을 설치)
 RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk fonts-nanum && \
+    apt-get install -y openjdk-17-jdk git fonts-nanum && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
