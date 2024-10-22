@@ -1,6 +1,5 @@
 services:
-  jupyter:
-    # container_name: ${CONTAINER_NAME_PREFIX}_jupyter
+  analysis:
     image: ${IMAGE_NAME}
     build:
       context: .
@@ -13,6 +12,7 @@ services:
       - JUPYTER_ENABLE_LAB=yes
     ports:
       - 8888:8888
+      - 8000:8000
     depends_on:
       - mongodb
     command:
@@ -26,7 +26,6 @@ services:
       - "--NotebookApp.notebook_dir='/app'"      
   mongodb:
     image: mongo:7
-    # container_name: ${CONTAINER_NAME_PREFIX}_mongodb
     restart: always
     ports:
       - 27017:27017
