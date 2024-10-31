@@ -7,6 +7,9 @@
 - fastapi
 
 #### connect remote Docker container
+```
+~$ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
 - @ http://localhost:8888/
 - @ http://localhost:8888/images/empty.txt
 - @ mongodb://localhost:27017/ or mongodb://mongodb:27017/
