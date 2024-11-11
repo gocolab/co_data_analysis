@@ -8,6 +8,7 @@ seaborn
 scipy
 wget
 pymongo
+openpyxl
 
 # web scrapping
 requests
