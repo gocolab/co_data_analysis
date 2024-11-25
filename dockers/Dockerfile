@@ -1,12 +1,11 @@
+FROM nvidia/cuda:11.1.1-devel-ubuntu20.04
+
 ARG GIT_BRANCH_NAME
 ARG APP_DIR_NAME
 ARG GIT_URI
-ARG CUDA_VERSION
-ARG LINUXOS_VERSION
 
-FROM nvidia/cuda:${CUDA_VERSION}-devel-${LINUXOS_VERSION}
-
-RUN apt-get update 
+RUN apt-get update \
+    && apt-get install -y git python3 python3-pip
 
 # 작업 디렉토리 설정
 WORKDIR /apps
