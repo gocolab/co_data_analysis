@@ -7,5 +7,7 @@ uvicorn
 jinja2
 python-multipart
 pydantic-settings
+beanie
+motor
 # pandas
 # torch --index-url https://download.pytorch.org/whl/cu118
