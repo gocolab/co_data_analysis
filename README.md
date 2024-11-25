@@ -1,4 +1,4 @@
-- fastapi와 mongoDB 연계하는 기본 설정
+- pytorch chatbot 위한 fastapi와 mongoDB 연계하는 기본 설정
 - URI 통한 image 접속 제공
   
 #### Main package
