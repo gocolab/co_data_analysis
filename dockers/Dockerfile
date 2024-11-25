@@ -1,13 +1,15 @@
-FROM python:3.11
+ARG GIT_BRANCH_NAME
+ARG APP_DIR_NAME
+ARG GIT_URI
+ARG CUDA_VERSION
+ARG LINUXOS_VERSION
+
+FROM nvidia/cuda:${CUDA_VERSION}-devel-${LINUXOS_VERSION}
 
 RUN apt-get update 
 
 # 작업 디렉토리 설정
 WORKDIR /apps
-
-ARG GIT_BRANCH_NAME
-ARG APP_DIR_NAME
-ARG GIT_URI
 
 # Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
 RUN git clone -b ${GIT_BRANCH_NAME} ${GIT_URI} ${APP_DIR_NAME}
