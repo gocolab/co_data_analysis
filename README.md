@@ -1,4 +1,4 @@
-## co_data_analysis
+- data_analysis for finances
 #### Main package
 - python:3.11
 - mongo:7
