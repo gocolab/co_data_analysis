@@ -13,3 +13,5 @@ finance-datareader
 plotly
 openpyxl
 pykrx
+pandas_datareader
+yfinance
