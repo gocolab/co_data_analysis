@@ -23,7 +23,7 @@ services:
       - "--no-browser"
       - "--allow-root"
       - "--NotebookApp.token=''"
-      - "--NotebookApp.notebook_dir='/app'"    
+      - "--NotebookApp.notebook_dir='/apps'"    
   mongodb:
     image: mongo:7
     restart: always
