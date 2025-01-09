@@ -10,5 +10,24 @@ pydantic-settings
 beanie
 motor
 faker
-pandas
+# data analytics with finance
+jupyterlab 
+pyarrow
+pandas 
+numpy 
+matplotlib
+seaborn
+scipy
+scikit-learn
+wget
+pymongo
+pyLDAvis
+finance-datareader
+plotly
+openpyxl
+pykrx
+pandas_datareader
+yfinance
+pymysql
+# AI
 torch
