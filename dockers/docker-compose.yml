@@ -1,5 +1,5 @@
 services:
-  analysis_fastapi:
+  pytorch_fastapi:
     image: ${IMAGE_NAME}
     build:
       context: .
